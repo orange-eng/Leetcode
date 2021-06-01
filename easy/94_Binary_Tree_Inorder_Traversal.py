@@ -13,23 +13,23 @@ class TreeNode(object):
         self.left = left
         self.right = right
 
-class Solution(object):
-    def inorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
-        res = []
-        stack = []
-        while root or stack:
-            if root:
-                stack.append(root)
-                root = root.left
-            else:
-                root = stack.pop()
-                res.append(root.val)
-                root = root.right
-        return res 
+# class Solution(object):
+#     def inorderTraversal(self, root):
+#         """
+#         :type root: TreeNode
+#         :rtype: List[int]
+#         """
+#         res = []
+#         stack = []
+#         while root or stack:
+#             if root:
+#                 stack.append(root)
+#                 root = root.left
+#             else:
+#                 root = stack.pop()
+#                 res.append(root.val)
+#                 root = root.right
+#         return res 
 
 # class Solution(object):
 #     def inorderTraversal(self, root):
@@ -52,6 +52,21 @@ class Solution(object):
 #                 res.append(root.val)
 #                 root = root.right
 #         return res
+
+
+# 递归法：
+class Solution(object):
+    def inorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if root == None:
+            return []
+        else:
+            return self.inorderTraversal(root.left) +[root.val] +  self.inorderTraversal(root.right)
+
+
 
 l1 = TreeNode(1)
 l2 = TreeNode(2)
