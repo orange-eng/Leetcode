@@ -6,7 +6,7 @@
 
 
 # 栈方法
-
+# 也可以先把所有元素存进[]里面再说
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
