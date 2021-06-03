@@ -1,4 +1,8 @@
 
+# Leetcode practice
+# author: orange
+# date: 2021/6/3
+
 
 '''
 #查找
