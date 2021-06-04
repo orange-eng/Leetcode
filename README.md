@@ -164,9 +164,31 @@ se = set(str)       # 变为集合set，已经不是列表list
 print (se)          # {'j', 'f', 'a', 'd', 'l', 's', 'g', 'k'}
 str = list(se)      # 再变为列表list
 print(str)          # ['j', 'f', 'a', 'd', 'l', 's', 'g', 'k']
-
 ```
 
+
+# 字典
+
+## get()函数
+- get()用于返回指定键的值，如果不在字典中，那么返回默认值
+
+- **参数**  
+```python
+dict.get(key, default=None)
+```
+key：字典中要查找的键。  
+default：可选参数，如果指定键的值不存在时，返回该值，默认为 None。
+
+- 实例
+```python
+dict = {'Name': 'Xiaoxiao', 'Age': 18, 'School': 'Hrbeu'}
+
+print (dict.get('School'))
+print (dict.get('Sex')
+
+> Hrbeu
+> Nothing
+```
 
  表头  | 表头  | 表头
  ---- | ----- | ------  
