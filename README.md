@@ -118,6 +118,55 @@ end -- 字符串中结束搜索的位置。字符中第一个字符的索引为 
 2
 ```
 
+# 常用方法
+
+## 牛顿迭代法
+- 牛顿迭代法几乎可以求解所有的方程组，其迭代公式也十分简单，经常使用。
+
+- 公式为： Xn+1 = Xn -f(x)/f'(x)
+
+### 实例：求解平方根
+
+f(x) = x^(2) - a
+y^2 = x
+yn+1 = yn - (yn^2 - x)/2yn
+r = r - (r^2 - x)/2r
+**代码如下**
+```python
+# 牛顿迭代法
+#y^2 = x
+#迭代公式为yn+1 = yn -(yn^2 - x)/(2yn)
+
+class Solution:
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x <= 1:
+            return x
+        r = x
+        while r > x / r:                # 设置好临界条件
+            r = (r + x / r) // 2        # 根据牛顿迭代法求出递推公式
+            # r = (2*r + x/(r*r))//3
+        return int(r)
+```
+
+
+# 去重
+
+## set方法
+- 这个比较简单，直接看代码即可
+```python
+# 由于数据类型set本身具有无序，唯一值的特性，可以用内置函数set对字符串和列表进行去重，挺方便的
+str = "asdfasdlklfgklgjsdfjkjl"
+se = set(str)       # 变为集合set，已经不是列表list
+print (se)          # {'j', 'f', 'a', 'd', 'l', 's', 'g', 'k'}
+str = list(se)      # 再变为列表list
+print(str)          # ['j', 'f', 'a', 'd', 'l', 's', 'g', 'k']
+
+```
+
 
  表头  | 表头  | 表头
  ---- | ----- | ------  
