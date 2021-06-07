@@ -182,13 +182,49 @@ default：可选参数，如果指定键的值不存在时，返回该值，默�
 - 实例
 ```python
 dict = {'Name': 'Xiaoxiao', 'Age': 18, 'School': 'Hrbeu'}
-
 print (dict.get('School'))
 print (dict.get('Sex')
-
-> Hrbeu
-> Nothing
+# 输出为：Hrbeu
+# 输出为： Nothing
 ```
+
+# 其他函数
+
+## tuple()函数
+
+- 描述
+
+ tuple()函数用于将列表、区间（range）等转换为元组。
+
+注意：元组和列表非常类似，但列表与元组最大的区别在于：元组是不可改变的，列表是可改变的。元组支持的操作，列表基本上都支持；列表支持对元素的修改，而元组则不支持。从这个角度来看，可以认为列表是增强版的元组。
+
+虽然大部分时候都可使用列表来代替元组，但如果程序不需要修改列表所包含的元素，那么使用元组代替列表会更安全。
+
+```python
+
+a = [1,2] #list
+b = {"1":2,"3":3} #dict
+c = {1,2,3,3}  #set
+d = range(2,10,2) #range
+print(tuple(a))
+print(tuple(b))
+print(tuple(c))
+print(tuple(d))
+```
+output:
+```python
+(1, 2)
+('1', '3')
+(1, 2, 3)
+(2, 4, 6, 8)
+```
+
+
+
+
+
+
+
 
  表头  | 表头  | 表头
  ---- | ----- | ------  
