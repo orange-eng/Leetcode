@@ -1,4 +1,8 @@
 
+# Leetcode practice
+# author: orange
+# date: 2021/6/12
+
 
 class Solution:
     def missingNumber(self, nums):
