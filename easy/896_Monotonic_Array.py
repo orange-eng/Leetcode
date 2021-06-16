@@ -1,4 +1,8 @@
 
+# Leetcode practice
+# author: orange
+# date: 2021/6/16
+
 
 # 双flag方法即可
 # 如果递增，a=1
