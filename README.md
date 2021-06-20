@@ -179,7 +179,8 @@ dict.get(key, default=None)
 key：字典中要查找的键。  
 default：可选参数，如果指定键的值不存在时，返回该值，默认为 None。
 
-- 实例
+- **实例**
+
 ```python
 dict = {'Name': 'Xiaoxiao', 'Age': 18, 'School': 'Hrbeu'}
 print (dict.get('School'))
@@ -189,6 +190,29 @@ print (dict.get('Sex')
 ```
 
 # 其他函数
+
+## map()函数
+map是python内置函数，会根据提供的函数对指定的序列做映射
+```python
+map(function,iterable,...)
+```
+第一个参数接受一个函数名，后面的参数接受一个或多个可迭代的序列，返回的是一个集合。
+
+把函数依次作用在list中的每一个元素上，得到一个新的list并返回。注意，map不改变原list，而是返回一个新list。
+
+- 实例
+
+```python
+
+del square(x):
+    return x ** 2
+
+map(square,[1,2,3,4,5])
+
+# 结果如下:
+[1,4,9,16,25]
+
+```
 
 ## tuple()函数
 
