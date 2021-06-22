@@ -118,6 +118,17 @@ end -- 字符串中结束搜索的位置。字符中第一个字符的索引为 
 2
 ```
 
+## Counter()函数
+- **描述**
+counter()作用就是在一个数组内，遍历所有元素，将元素出现的次数记下来
+```python
+a = [1,4,2,3,2,3,4,2]  
+from collections import Counter  
+print Counter(a)
+
+#结果为：Counter({2: 3, 4: 2, 3: 2, 1: 1})
+```  
+
 # 常用方法
 
 ## 牛顿迭代法
