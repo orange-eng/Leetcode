@@ -191,14 +191,13 @@ key：字典中要查找的键。
 default：可选参数，如果指定键的值不存在时，返回该值，默认为 None。
 
 - **实例**
-
 ```python
 dict = {'Name': 'Xiaoxiao', 'Age': 18, 'School': 'Hrbeu'}
 print (dict.get('School'))
 print (dict.get('Sex')
 # 输出为：Hrbeu
 # 输出为： Nothing
-```
+```  
 
 # 其他函数
 
@@ -211,7 +210,7 @@ map(function,iterable,...)
 
 把函数依次作用在list中的每一个元素上，得到一个新的list并返回。注意，map不改变原list，而是返回一个新list。
 
-- 实例
+- 实例1
 
 ```python
 
@@ -224,6 +223,21 @@ map(square,[1,2,3,4,5])
 [1,4,9,16,25]
 
 ```
+- 实例2
+```python
+class Solution:
+    def countLargestGroup(self, n: int) -> int:
+        # 分解做法
+        # 1.求每个数字的数位和
+        sum_list = list(map(lambda x: sum(map(int, str(x+1))), range(n)))
+        # 2. 记录每个和出现的次数
+        c_list = Counter(sum_list).values()
+        # 3. 记录每个和出现的次数进行计数
+        s_list = Counter(c_list).items()
+        # 4. 返回数字数目并列最多的组的次数，因此是[1]
+        return max(s_list)[1]
+```
+
 
 ## tuple()函数
 
