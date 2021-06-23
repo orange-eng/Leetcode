@@ -4,7 +4,8 @@
 # date: 2021/6/23
 
 
-
+# 方法1
+# 迭代法-传统
 
 # class Solution:
 #     def selfDividingNumbers(self, left, right):
@@ -32,6 +33,9 @@
 #                 output.append(i)
 #         return output
 
+# 方法二
+# 使用字符串
+# 不会超时
 class Solution:
     def selfDividingNumbers(self, left, right):
         result = []
