@@ -129,40 +129,6 @@ print Counter(a)
 #结果为：Counter({2: 3, 4: 2, 3: 2, 1: 1})
 ```  
 
-# 常用方法
-
-## 牛顿迭代法
-- 牛顿迭代法几乎可以求解所有的方程组，其迭代公式也十分简单，经常使用。
-
-- 公式为： Xn+1 = Xn -f(x)/f'(x)
-
-### 实例：求解平方根
-
-f(x) = x^(2) - a
-y^2 = x
-yn+1 = yn - (yn^2 - x)/2yn
-r = r - (r^2 - x)/2r
-**代码如下**
-```python
-# 牛顿迭代法
-#y^2 = x
-#迭代公式为yn+1 = yn -(yn^2 - x)/(2yn)
-
-class Solution:
-    def mySqrt(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
-        if x <= 1:
-            return x
-        r = x
-        while r > x / r:                # 设置好临界条件
-            r = (r + x / r) // 2        # 根据牛顿迭代法求出递推公式
-            # r = (2*r + x/(r*r))//3
-        return int(r)
-```
-
 
 # 去重
 
@@ -190,14 +156,58 @@ dict.get(key, default=None)
 key：字典中要查找的键。  
 default：可选参数，如果指定键的值不存在时，返回该值，默认为 None。
 
+
+# 循环函数
+在执行 while 循环或者 for 循环时，只要循环条件满足，程序将会一直执行循环体，不停地转圈。但在某些场景，我们可能希望在循环结束前就手动离开循环，Pyhton 提供了 2 种强制离开当前循环体的办法：
+
+- 使用 continue 语句，可以跳过执行本次循环体中剩余的代码，转而执行下一次的循环。
+- 只用 break 语句，可以完全终止当前循环。
+
+
+## continue函数
+- **概述**
+continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
+
 - **实例**
 ```python
 dict = {'Name': 'Xiaoxiao', 'Age': 18, 'School': 'Hrbeu'}
 print (dict.get('School'))
-print (dict.get('Sex')
-# 输出为：Hrbeu
-# 输出为： Nothing
-```  
+print ("")
+```
+- **实例**
+```python
+for letter in 'Python':     # 第一个实例
+   if letter == 'h':
+      continue
+   print('当前字母 :', letter)
+
+   Output:
+   ----------------
+   当前字母 : P
+   当前字母 : y
+   当前字母 : t
+   当前字母 : o
+   当前字母 : n
+```
+
+## break函数
+- **概述**  
+break 用于完全结束一个循环，跳出循环体。不管是哪种循环，一旦在循环体中遇到 break，系统就将完全结束该循环，开始执行循环之后的代码。
+
+- break 语句一般会结合 if 语句进行搭配使用，表示在某种条件下，跳出循环体，如果使用嵌套循环，break 语句将跳出当前的循环体。
+
+- ** 实例**
+```python
+for i in range(0, 10) :
+    print("i的值是: ", i)
+    if i == 2 :
+        # 执行该语句时将结束循环
+        break
+output:
+i的值是:  0
+i的值是:  1
+i的值是:  2
+```
 
 # 其他函数
 
@@ -269,6 +279,40 @@ output:
 ```
 
 
+
+# 常用方法
+
+## 牛顿迭代法
+- 牛顿迭代法几乎可以求解所有的方程组，其迭代公式也十分简单，经常使用。
+
+- 公式为： Xn+1 = Xn -f(x)/f'(x)
+
+### 实例：求解平方根
+
+f(x) = x^(2) - a
+y^2 = x
+yn+1 = yn - (yn^2 - x)/2yn
+r = r - (r^2 - x)/2r
+**代码如下**
+```python
+# 牛顿迭代法
+#y^2 = x
+#迭代公式为yn+1 = yn -(yn^2 - x)/(2yn)
+
+class Solution:
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x <= 1:
+            return x
+        r = x
+        while r > x / r:                # 设置好临界条件
+            r = (r + x / r) // 2        # 根据牛顿迭代法求出递推公式
+            # r = (2*r + x/(r*r))//3
+        return int(r)
+```
 
 
 
